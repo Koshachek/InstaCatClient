@@ -1,0 +1,40 @@
+<div class="login-page">
+
+  <h2>Sign in</h2>
+
+  <div id="controls" class="row">
+    <p>Create new account
+      <a routerLink="/register">Signup</a>
+    </p>
+  </div>
+
+  <form [formGroup]="loginForm">
+
+    <div class="justify-content-center">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+        </mat-form-field>
+      </div>
+
+      <div id="controls" class="row">
+        <button style="width: 10%"
+                [disabled]="loginForm.invalid"
+                (click)="submitDataToServer()"
+                mat-flat-button color="primary">
+          Sign in
+        </button>
+      </div>
+
+    </div>
+
+  </form>
+</div>
