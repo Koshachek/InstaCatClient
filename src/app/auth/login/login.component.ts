@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
         this.tokenService.saveUser(data);
 
         this.notificationService.showSnackBar('Successful authorization');
-        this.router.navigate(['/']);
+        this.router.navigate(['/index']);
         window.location.reload();
       }
       , error => {
