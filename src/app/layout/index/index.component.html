@@ -16,9 +16,8 @@
 
     <mat-card-actions align="start">
 
-      <button *ngIf="isUserDataLoaded" mat-button (click)="likePost(post.id, i)" >
-<!--              [ngClass]="post.likedUsers.indexOf(user.username) !== -1 ? 'is-liked' : 'not-liked'"-->
-
+      <button *ngIf="isUserDataLoaded" mat-button (click)="likePost(post.id, i)"
+              [ngClass]="checkLike(this.user.username, i) ? 'is-liked' : 'not-liked'">
         <mat-icon>favorite</mat-icon>
         Like
       </button>

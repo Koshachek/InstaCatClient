@@ -106,4 +106,13 @@ export class IndexComponent implements OnInit {
     }
   }
 
+  checkLike(username: string, postIndex: number): boolean {
+    const post = this.posts[postIndex];
+    const index = post.likedUsers?.indexOf(username, 0);
+    if (index! > -1) {
+      return true;
+    }
+    return false;
+  }
+
 }
