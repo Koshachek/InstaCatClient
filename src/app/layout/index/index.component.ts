@@ -72,4 +72,38 @@ export class IndexComponent implements OnInit {
     return 'data:image/jpeg;base64,' + img;
   }
 
+  likePost(postId: number, postIndex: number): void {
+    const post = this.posts[postIndex];
+    console.log(post);
+
+    if (!post.likedUsers?.includes(this.user.username)) {
+      this.postService.likePost(postId, this.user.username)
+        .subscribe(() => {
+          post.likedUsers?.push(this.user.username);
+          this.notificationService.showSnackBar("Liked")
+        });
+    } else {
+      this.postService.likePost(postId, this.user.username)
+        .subscribe(() => {
+          const index = post.likedUsers?.indexOf(this.user.username, 0);
+          if (index! > -1) {
+            post.likedUsers?.splice(index!, 1);
+            this.notificationService.showSnackBar("Disliked")
+          }
+        });
+    }
+  }
+
+  postComment(message: string, postId: number, postIndex: number): void {
+    if (message.trim() !== '') {
+      const post = this.posts[postIndex];
+      console.log(post);
+      this.commentService.addCommentToPost(postId, message)
+        .subscribe(commentData => {
+          console.log(commentData);
+          post.comments?.push(commentData);
+        });
+    }
+  }
+
 }
