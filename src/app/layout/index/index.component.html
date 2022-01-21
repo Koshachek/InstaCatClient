@@ -32,9 +32,6 @@
       <mat-label>Leave a comment...</mat-label>
       <input matInput #comment (keyup.enter)="postComment(comment.value, post.id, i)" placeholder="message"
              maxlength="128" (keyup.enter)="comment.value=''">
-      <!--      <button mat-icon-button matSuffix aria-label="Clear" (click)="comment.value=''">-->
-      <!--        <mat-icon>close</mat-icon>-->
-      <!--      </button>-->
       <mat-hint align="end">{{comment.value.length}} / 128</mat-hint>
     </mat-form-field>
 
