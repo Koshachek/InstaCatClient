@@ -1,5 +1,9 @@
 # InstaCatClient
 
+##If we have a problem with script just run command:
+
+Set-ExecutionPolicy Unrestricted
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
 ## Development server
