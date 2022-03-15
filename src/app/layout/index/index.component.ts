@@ -48,17 +48,16 @@ export class IndexComponent implements OnInit {
 
   getImagesForPosts(posts: Post[]): void {
     posts.forEach(post => {
-      this.imageService.getPostImg(post.id!)
+      this.imageService.getImagesForPost(post.id!)
         .subscribe(imageData => {
           post.image = imageData.imageBytes;
         })
     });
   }
 
-
   getCommentForPosts(posts: Post[]): void {
     posts.forEach(post => {
-      this.commentService.getCommentForPost(post.id!)
+      this.commentService.getCommentsForPost(post.id!)
         .subscribe(commentData => {
           post.comments = commentData;
         })
