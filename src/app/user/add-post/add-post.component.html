@@ -3,7 +3,7 @@
     <button mat-flat-button color="primary" routerLink="/profile">My posts</button>
   </div>
 
-  <h2>Create Post</h2>
+  <h2>Create post</h2>
   <form [formGroup]="postEditForm">
 
     <img class="post-image"
@@ -15,7 +15,7 @@
            #fileInput
            (change)="onFileSelected($event)">
 
-    <button mat-button (click)="fileInput.click()">Select file</button>
+    <button mat-button (click)="fileInput.click()">Browse file</button>
 
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>Title</mat-label>
@@ -35,7 +35,7 @@
 
     <div style="text-align: right">
       <button mat-flat-button color="primary" [disabled]="postEditForm.invalid" (click)="submitPostDate()">
-        Create Post
+        Create post
       </button>
     </div>
 

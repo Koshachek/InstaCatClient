@@ -47,6 +47,7 @@ export class UserPostsComponent implements OnInit {
         .subscribe(() => {
           this.posts.slice(index, 1);
           this.notificationService.showSnackBar('Post has been deleted');
+          window.location.reload();
         });
     }
   }

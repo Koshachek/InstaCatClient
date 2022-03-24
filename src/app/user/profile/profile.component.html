@@ -7,14 +7,16 @@
 
   <div style="padding-top: 2rem" class="row">
     <div class="col">
-      <img class="profile-image" [src]="previewImageUrl || formatImage(userProfileImage) || 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'" alt="user image">
+      <img class="profile-image"
+           [src]="previewImageUrl || formatImage(userProfileImage) || 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'"
+           alt="user image">
 
       <input type="file"
              style="display: none"
              #fileInput
              (change)="onFileSelected($event)">
 
-      <button mat-button color="primary" (click)="fileInput.click()">Pick File</button>
+      <button mat-button color="primary" (click)="fileInput.click()">Browse file</button>
       <button mat-button *ngIf="selectedFile" (click)="onUpload()">Upload</button>
     </div>
     <div class="col" style="text-align: left">
